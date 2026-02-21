@@ -1,0 +1,18 @@
+class Solution:
+		def divisorGame(self, n: int) -> bool:
+			# Alice wins if n is even, loses if n is odd
+			return n % 2 == 0
+
+26. 1030. Matrix Cells in Distance Order
+	class Solution:
+		def allCellsDistOrder(self, rows: int, cols: int, rCenter: int, cCenter: int) -> List[List[int]]:
+			# Generate all cells
+			cells = []
+			for r in range(rows):
+				for c in range(cols):
+					cells.append([r, c])
+			
+			# Sort by Manhattan distance from center
+			cells.sort(key=lambda cell: abs(cell[0] - rCenter) + abs(cell[1] - cCenter))
+			
+			return cells
